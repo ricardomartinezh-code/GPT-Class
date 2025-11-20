@@ -1,0 +1,225 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Inscripción a materias</title>
+
+    <!-- Estilos básicos -->
+    <style>
+        /* Reseteo sencillo */
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+            background: linear-gradient(135deg, #f5f7fa, #e4ebf5);
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 16px;
+        }
+
+        .container {
+            max-width: 900px;
+            width: 100%;
+            background: #ffffff;
+            border-radius: 16px;
+            box-shadow: 0 16px 40px rgba(15, 23, 42, 0.12);
+            padding: 24px;
+        }
+
+        @media (min-width: 768px) {
+            .container {
+                padding: 32px 40px;
+            }
+        }
+
+        .header {
+            margin-bottom: 24px;
+            text-align: center;
+        }
+
+        .badge {
+            display: inline-block;
+            padding: 4px 10px;
+            border-radius: 999px;
+            font-size: 12px;
+            font-weight: 600;
+            letter-spacing: 0.03em;
+            text-transform: uppercase;
+            background: #eef2ff;
+            color: #4f46e5;
+            margin-bottom: 8px;
+        }
+
+        .title {
+            font-size: 24px;
+            font-weight: 700;
+            color: #111827;
+            margin-bottom: 6px;
+        }
+
+        .subtitle {
+            font-size: 14px;
+            color: #6b7280;
+        }
+
+        .workflow {
+            margin-top: 24px;
+        }
+
+        .workflow-step-title {
+            font-size: 13px;
+            text-transform: uppercase;
+            letter-spacing: 0.07em;
+            color: #9ca3af;
+            font-weight: 600;
+            margin-bottom: 12px;
+        }
+
+        .subject-grid {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 12px;
+        }
+
+        @media (min-width: 640px) {
+            .subject-grid {
+                grid-template-columns: repeat(2, minmax(0, 1fr));
+            }
+        }
+
+        .subject-card {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 14px 16px;
+            border-radius: 12px;
+            border: 1px solid #e5e7eb;
+            background: #f9fafb;
+            text-decoration: none;
+            transition: all 0.18s ease-out;
+        }
+
+        .subject-card:hover {
+            background: #eef2ff;
+            border-color: #6366f1;
+            transform: translateY(-1px);
+            box-shadow: 0 8px 20px rgba(99, 102, 241, 0.18);
+        }
+
+        .subject-info {
+            display: flex;
+            flex-direction: column;
+            gap: 2px;
+        }
+
+        .subject-name {
+            font-size: 15px;
+            font-weight: 600;
+            color: #111827;
+        }
+
+        .subject-detail {
+            font-size: 12px;
+            color: #6b7280;
+        }
+
+        .subject-pill {
+            font-size: 11px;
+            font-weight: 600;
+            padding: 3px 9px;
+            border-radius: 999px;
+            border: 1px solid #e5e7eb;
+            background: #ffffff;
+            color: #4b5563;
+            white-space: nowrap;
+        }
+
+        .footer-note {
+            margin-top: 20px;
+            font-size: 12px;
+            color: #9ca3af;
+            text-align: center;
+        }
+
+        /* Pequeño icono flecha → hecho con CSS */
+        .arrow {
+            margin-left: 6px;
+            font-size: 14px;
+        }
+    </style>
+</head>
+<body>
+    <main class="container">
+        <header class="header">
+            <div class="badge">Inscripción</div>
+            <h1 class="title">Selecciona la materia a la que deseas inscribirte</h1>
+            <p class="subtitle">
+                Al elegir una materia serás redirigido a su grupo correspondiente. 
+                Revisa bien antes de confirmar, cada botón te llevará a un enlace distinto.
+            </p>
+        </header>
+
+        <section class="workflow">
+            <p class="workflow-step-title">Paso único · Elige tu materia</p>
+
+            <div class="subject-grid">
+                <!-- MATERIA 1 -->
+                <a class="subject-card" href="https://ejemplo.com/enlace-materia-1" target="_blank" rel="noopener noreferrer">
+                    <div class="subject-info">
+                        <span class="subject-name">Materia 1: Introducción a la Psicología</span>
+                        <span class="subject-detail">Grupo A · Horario matutino</span>
+                    </div>
+                    <span class="subject-pill">
+                        Unirse al grupo <span class="arrow">→</span>
+                    </span>
+                </a>
+
+                <!-- MATERIA 2 -->
+                <a class="subject-card" href="https://ejemplo.com/enlace-materia-2" target="_blank" rel="noopener noreferrer">
+                    <div class="subject-info">
+                        <span class="subject-name">Materia 2: Neurociencias básicas</span>
+                        <span class="subject-detail">Grupo B · Horario vespertino</span>
+                    </div>
+                    <span class="subject-pill">
+                        Unirse al grupo <span class="arrow">→</span>
+                    </span>
+                </a>
+
+                <!-- MATERIA 3 -->
+                <a class="subject-card" href="https://ejemplo.com/enlace-materia-3" target="_blank" rel="noopener noreferrer">
+                    <div class="subject-info">
+                        <span class="subject-name">Materia 3: Psicología del aprendizaje</span>
+                        <span class="subject-detail">Grupo C · Modalidad en línea</span>
+                    </div>
+                    <span class="subject-pill">
+                        Unirse al grupo <span class="arrow">→</span>
+                    </span>
+                </a>
+
+                <!-- MATERIA 4 -->
+                <a class="subject-card" href="https://ejemplo.com/enlace-materia-4" target="_blank" rel="noopener noreferrer">
+                    <div class="subject-info">
+                        <span class="subject-name">Materia 4: Seminario de casos</span>
+                        <span class="subject-detail">Grupo D · Sesiones sabatinas</span>
+                    </div>
+                    <span class="subject-pill">
+                        Unirse al grupo <span class="arrow">→</span>
+                    </span>
+                </a>
+            </div>
+        </section>
+
+        <p class="footer-note">
+            Si tienes dudas sobre el grupo o el horario, consulta primero la información oficial 
+            antes de unirte al chat.
+        </p>
+    </main>
+</body>
+</html>
