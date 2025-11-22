@@ -51,6 +51,7 @@
             align-items: center;
             justify-content: center;
             padding: 16px;
+            padding-bottom: 210px;
         }
 
         .container {
@@ -182,6 +183,188 @@
             margin-left: 6px;
             font-size: 14px;
         }
+
+        /* Promoción de la app */
+        .app-promo {
+            position: fixed;
+            inset: auto 12px 12px 12px;
+            background: radial-gradient(circle at 16% 18%, rgba(34, 197, 94, 0.24), rgba(15, 23, 42, 0.96)),
+                linear-gradient(135deg, #0a0f1f 10%, #0e1729 55%, #111827 100%);
+            color: #f9fafb;
+            border-radius: 18px;
+            box-shadow: 0 30px 80px rgba(15, 23, 42, 0.45);
+            padding: 16px 16px 16px;
+            display: grid;
+            gap: 14px;
+            grid-template-columns: 1fr;
+            align-items: center;
+            z-index: 20;
+            max-width: 980px;
+            margin: 0 auto;
+            border: 1px solid rgba(255, 255, 255, 0.08);
+        }
+
+        @media (min-width: 680px) {
+            .app-promo {
+                grid-template-columns: auto 1fr auto;
+                padding: 18px 22px;
+            }
+        }
+
+        @media (max-width: 520px) {
+            .app-promo {
+                inset: auto 8px 12px 12px;
+                padding: 14px 14px 14px;
+                grid-template-columns: 1fr;
+                gap: 14px;
+            }
+        }
+
+        .app-promo__brand {
+            display: grid;
+            grid-template-columns: auto 1fr;
+            gap: 12px;
+            align-items: center;
+            font-weight: 700;
+            letter-spacing: 0.01em;
+            position: relative;
+        }
+
+        .app-promo__logo {
+            width: 54px;
+            height: 54px;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            border-radius: 14px;
+            background: conic-gradient(from 160deg, #22c55e, #14b8a6, #0ea5e9, #6366f1 70%, #22c55e 100%);
+            box-shadow: 0 12px 30px rgba(34, 197, 94, 0.35);
+            padding: 6px;
+        }
+
+        .app-promo__logo svg {
+            width: 42px;
+            height: 42px;
+            fill: #0b1224;
+            background: #ffffff;
+            border-radius: 12px;
+            padding: 6px;
+            box-shadow: inset 0 0 0 1px rgba(0, 0, 0, 0.05);
+        }
+
+        .app-promo__text {
+            display: grid;
+            gap: 4px;
+        }
+
+        .app-promo__title {
+            font-size: 16px;
+            font-weight: 800;
+            line-height: 1.25;
+        }
+
+        .app-promo__subtitle {
+            font-size: 13px;
+            color: #d1d5db;
+            line-height: 1.35;
+        }
+
+        .app-links {
+            display: grid;
+            gap: 12px;
+        }
+
+        @media (min-width: 680px) {
+            .app-links {
+                grid-template-columns: repeat(2, minmax(0, 1fr));
+            }
+        }
+
+        .store-badge {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            padding: 0;
+            background: #0b1224;
+            border-radius: 14px;
+            border: 1px solid rgba(255, 255, 255, 0.14);
+            overflow: hidden;
+            box-shadow: 0 12px 26px rgba(0, 0, 0, 0.3);
+            transition: transform 150ms ease, box-shadow 150ms ease, border-color 150ms ease;
+        }
+
+        .store-badge:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 16px 32px rgba(0, 0, 0, 0.36);
+            border-color: rgba(255, 255, 255, 0.28);
+        }
+
+        .store-badge svg {
+            width: 180px;
+            height: auto;
+            display: block;
+        }
+
+        @media (max-width: 520px) {
+            .store-badge svg {
+                width: 100%;
+            }
+        }
+
+        .promo-actions {
+            display: grid;
+            grid-template-columns: 1fr auto;
+            gap: 10px;
+            align-items: start;
+        }
+
+        .promo-close {
+            appearance: none;
+            border: none;
+            background: rgba(255, 255, 255, 0.08);
+            color: #e5e7eb;
+            width: 34px;
+            height: 34px;
+            border-radius: 999px;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+            transition: background 150ms ease, transform 150ms ease;
+        }
+
+        .promo-close:hover {
+            background: rgba(255, 255, 255, 0.16);
+            transform: scale(1.03);
+        }
+
+        .promo-badges {
+            display: flex;
+            align-items: stretch;
+            gap: 10px;
+            flex-wrap: wrap;
+        }
+
+        @media (max-width: 520px) {
+            body {
+                padding-bottom: 240px;
+            }
+
+            .promo-actions {
+                grid-template-columns: 1fr;
+            }
+
+            .promo-close {
+                position: absolute;
+                top: 6px;
+                right: 6px;
+            }
+
+            .promo-badges {
+                flex-direction: column;
+                align-items: stretch;
+            }
+        }
     </style>
 </head>
 <body>
@@ -260,5 +443,67 @@
             Para inscribirte a mas de un chat vuelve a ingresar al formulario.
         </p>
     </main>
+
+    <section class="app-promo" aria-label="Descarga la app de ChatGPT">
+        <div class="promo-actions">
+            <div class="app-promo__brand">
+                <span class="app-promo__logo" aria-hidden="true">
+                    <svg viewBox="0 0 32 32" role="presentation">
+                        <path
+                            d="M27.79 13.42a7.3 7.3 0 0 0-.63-6.07 7.36 7.36 0 0 0-7.91-3.53A7.3 7.3 0 0 0 12.58 3 7.36 7.36 0 0 0 4.67 6.5a7.3 7.3 0 0 0 .66 7A7.36 7.36 0 0 0 6.1 24.6a7.3 7.3 0 0 0 7.93 3.52 7.36 7.36 0 0 0 6.67 4.84 7.3 7.3 0 0 0 7.91-3.53 7.36 7.36 0 0 0 .63-6.06 7.3 7.3 0 0 0-.66-6.99Zm-12.68 6.1-3.02 1.7a3.9 3.9 0 0 1-5.26-1.43 3.96 3.96 0 0 1 1.3-5.35l2.94-1.66Zm6.38 3.97a3.9 3.9 0 0 1-4.76-.9v-6.07l2.96-1.67 3 1.7a3.9 3.9 0 0 1-1.2 6.94Zm2.02-13.5-2.96 1.68-3-1.7V8.8a3.9 3.9 0 0 1 5.2-5.36 3.96 3.96 0 0 1 .76 6.55Zm-11.6-7.35a3.9 3.9 0 0 1 4.75.9v6.07l-2.96 1.67-3-1.7a3.9 3.9 0 0 1 1.2-6.94Zm-2.02 13.5 2.96-1.68 3 1.7v5.2a3.9 3.9 0 0 1-5.2 5.36 3.96 3.96 0 0 1-.76-6.55Zm13.62 6.17a3.9 3.9 0 0 1-1.3 5.35l-2.94 1.65v-6.98l3.03-1.7a3.9 3.9 0 0 1 1.21-6.94 3.96 3.96 0 0 1 1.3 8.62Z"
+                        />
+                    </svg>
+                </span>
+                <div class="app-promo__text">
+                    <p class="app-promo__title">Descarga la app de ChatGPT</p>
+                    <p class="app-promo__subtitle">Logo y badges oficiales, optimizados para móviles.</p>
+                    <p class="app-promo__subtitle">Disponible en tu tienda favorita. Accede más rápido a tus grupos.</p>
+                </div>
+            </div>
+
+            <button class="promo-close" type="button" aria-label="Cerrar banner" title="Cerrar banner">
+                ✕
+            </button>
+        </div>
+
+        <div class="app-links promo-badges">
+            <a class="store-badge" href="https://apps.apple.com/mx/app/chatgpt/id6448311069" target="_blank" rel="noopener noreferrer"
+                aria-label="Descargar ChatGPT en App Store">
+                <svg viewBox="0 0 160 48" role="presentation">
+                    <rect width="160" height="48" rx="12" fill="#0b1224" />
+                    <g fill="#fff">
+                        <path d="M34.86 24.55a9.27 9.27 0 0 1 3.39-7.15 9.5 9.5 0 0 0-7.24-3.72c-3.06-.31-6.04 1.82-7.6 1.82-1.58 0-4-1.78-6.59-1.73A9.96 9.96 0 0 0 6 17.5c-3.52 6.09-.9 15.02 2.54 19.96 1.67 2.41 3.65 5.1 6.24 4.99 2.48-.1 3.43-1.62 6.45-1.62 3 0 3.9 1.62 6.58 1.57 2.71-.05 4.45-2.46 6.1-4.9a19.4 19.4 0 0 0 2.7-5.68c-7-.27-10.75-6.5-10.75-7.27Z" />
+                        <path d="M29.82 12.2a8.78 8.78 0 0 0 2.02-6.2 9.2 9.2 0 0 0-6.01 3.11 8.6 8.6 0 0 0-2.1 6.07 7.5 7.5 0 0 0 6.1-2.98Z" />
+                        <path fill-rule="evenodd" clip-rule="evenodd"
+                            d="M66.76 10.73c4.5 0 7.52 2.83 7.52 8.06v14.1h-4.3v-3.12h-.1a7.53 7.53 0 0 1-6.53 3.46c-3.6 0-6.55-1.9-6.55-6.1 0-5.16 5.02-6.5 10.56-6.5h2.63v-.68c0-2.8-1.8-4.3-4.8-4.3-2.35 0-4.28 1.04-5.45 2.13l-2-3.07c1.74-1.57 4.28-2.98 8.02-2.98Zm-1.73 18.3c2.15 0 4.18-1.07 4.94-3.1.26-.7.38-1.49.38-2.3v-1h-2.2c-3.22 0-6.22.73-6.22 3.6 0 1.74 1.42 2.8 3.1 2.8Zm15.3-16.7h-4.53V7.4h4.53v4.93Zm-4.52 3.14h4.52v16.72h-4.52V15.48ZM90.6 35h-4.53V7.4h4.53V35Zm15.36-19.3c-3.5 0-6.2 1.8-7.74 4.32h-.1v-4.55h-4.4V35h4.53v-8.74c0-4.47 2.6-7.06 6.26-7.06 3.54 0 5.34 2.22 5.34 5.98V35h4.53v-10.7c0-6.07-3.4-8.6-8.4-8.6ZM52.22 35.26c1.56 0 2.8-1.26 2.8-2.82 0-1.56-1.24-2.82-2.8-2.82a2.82 2.82 0 0 0-2.82 2.82c0 1.56 1.26 2.82 2.82 2.82Z" />
+                        <path d="M117.4 26.13c.12 3.6 3.03 5.75 6.65 5.75 2.08 0 3.95-.44 5.46-1.22l.74 3.14c-1.7.86-4.05 1.48-6.84 1.48-6.36 0-10.1-3.9-10.1-9.8 0-5.38 3.28-10.35 9.54-10.35 6.35 0 8.46 5.23 8.46 9.5 0 .92-.08 1.63-.15 2.02h-13.8Zm10.03-3.13c.04-1.86-.78-4.78-4.14-4.78-3.1 0-4.4 2.76-4.64 4.78h8.78ZM144 21.53c0-2.03-.02-3.76-.1-5.33h3.94l.2 3.32h.12c.9-2.58 3.03-3.74 4.73-3.74.5 0 .78.04 1.16.12v4.27c-.38-.1-.8-.17-1.35-.17-2.13 0-3.6 1.35-4 3.32-.08.42-.12.92-.12 1.42V35H144V21.53Z" />
+                    </g>
+                </svg>
+            </a>
+
+            <a class="store-badge" href="https://play.google.com/store/apps/details?id=com.openai.chatgpt&pcampaignid=web_share" target="_blank"
+                rel="noopener noreferrer" aria-label="Descargar ChatGPT en Google Play">
+                <svg viewBox="0 0 168 48" role="presentation">
+                    <rect width="168" height="48" rx="12" fill="#0b1224" />
+                    <path fill="#7BC242"
+                        d="m31.04 9.23 24.7 13.84c1.22.68 1.22 2.39 0 3.08L31.04 40a2 2 0 0 1-2.98-1.7V10.93c0-1.5 1.6-2.45 2.98-1.7Z" />
+                    <path fill="#3FAAE0" d="M20 36.72c0 1.1.88 2 1.98 2 .67 0 1.08-.28 1.8-.67l7.92-4.44-11.7-9.4v12.5Z" />
+                    <path fill="#F6C22C" d="M20 11.3v11.5l11.7-9.4-7.92-4.44c-.72-.4-1.13-.67-1.8-.67-1.1 0-1.98.9-1.98 2Z" />
+                    <path fill="#EE3D43" d="m43.82 24-7.18 4.02L25.35 24l11.3-6.6z" />
+                    <path fill="#fff" fill-rule="evenodd" clip-rule="evenodd"
+                        d="M77.55 34.97h-4.94l-2.88-9.46h-.1l-2.87 9.46h-4.94l-4.6-18.48h4.7l2.35 10.38h.1l3-10.38h4.45l3 10.44h.1l2.4-10.44h4.6l-4.26 18.48Zm6.26-12.96V35h4.52V15.87h-4.52Zm2.25-2.4a2.6 2.6 0 0 1-2.63-2.52c0-1.43 1.07-2.57 2.63-2.57 1.57 0 2.61 1.14 2.64 2.57a2.6 2.6 0 0 1-2.64 2.52Zm19.86 15.46-2.1 2.05c-1.2 1.15-2.34 1.7-4.02 1.7-1.94 0-3.52-.94-4.46-2.52h-.1V35h-4.52V7.4h4.53v8.13h.1c.86-1.45 2.4-2.38 4.47-2.38 1.6 0 3.05.62 3.96 1.75.77.96 1.14 2.24 1.14 4.17V35h-4.52V22.6c0-2.05-.64-3.5-2.54-3.5-1.38 0-2.32.9-2.73 2.05-.13.38-.16.86-.16 1.3V35h-4.52V22.3c0-2.94-1.17-5.4-4.38-5.4-1.6 0-2.92.93-3.58 2.3-.32.65-.48 1.44-.48 2.24V35h-4.52V15.87h4.33v2.58h.1c.5-.86 1.26-1.6 2.18-2.07a6.6 6.6 0 0 1 3.1-.75c1.53 0 3 .64 3.98 1.75a6.1 6.1 0 0 1 1.08 2.1h.1c.46-1 1.1-1.83 1.93-2.46 1.1-.83 2.43-1.36 3.88-1.36 1.66 0 3.06.57 4.08 1.62 1.5 1.5 1.88 3.86 1.88 6.3V35h-4.53V22.34c0-2.05-.5-3.63-2.4-3.63-1.25 0-2.2.92-2.6 2.05-.23.6-.28 1.26-.28 2.08V35Zm13.23-10.82c.12 3.6 3.03 5.75 6.65 5.75 2.08 0 3.95-.44 5.46-1.22l.74 3.14c-1.7.86-4.05 1.48-6.84 1.48-6.36 0-10.1-3.9-10.1-9.8 0-5.38 3.28-10.35 9.54-10.35 6.35 0 8.46 5.23 8.46 9.5 0 .92-.08 1.63-.15 2.02h-13.8Zm10.03-3.13c.04-1.86-.78-4.78-4.14-4.78-3.1 0-4.4 2.76-4.64 4.78h8.78Zm5.84 7.4c1.3.8 3.55 1.56 5.4 1.56 2.38 0 3.37-.94 3.37-2.27 0-1.38-.86-2.08-3.37-3-4.13-1.43-5.83-3.72-5.78-6.2 0-3.76 3.1-6.6 7.85-6.6 2.32 0 4.36.64 5.6 1.4l-1.04 3.28c-.88-.53-2.56-1.3-4.46-1.3-1.92 0-3.04.88-3.04 2.16 0 1.3 1 1.9 3.55 2.87 4.4 1.63 6 3.84 6.04 6.42 0 4.07-3.22 6.68-8.23 6.68-2.48 0-4.8-.6-6.36-1.56l.97-3.45Zm20.92 3.42c-4.92 0-8.1-3.43-8.1-8.7 0-5.47 3.37-9.2 8.3-9.2 4.9 0 8.07 3.38 8.07 8.66 0 5.72-3.68 9.25-8.27 9.25h-.02Zm.15-3.4c2.13 0 3.52-2.1 3.52-5.8 0-3.3-1.15-5.6-3.52-5.6-2.32 0-3.6 2.26-3.6 5.64 0 3.76 1.38 5.76 3.6 5.76Z" />
+                </svg>
+            </a>
+        </div>
+    </section>
+
+    <script>
+        const promo = document.querySelector('.app-promo');
+        const closeBtn = document.querySelector('.promo-close');
+
+        closeBtn?.addEventListener('click', () => {
+            promo?.setAttribute('hidden', 'true');
+        });
+    </script>
 </body>
 </html>
