@@ -92,6 +92,49 @@
             line-height: 1.6;
         }
 
+        .info-panel {
+            display: grid;
+            gap: 12px;
+            padding: 16px;
+            border-radius: 14px;
+            background: #f1f5f9;
+            border: 1px solid #e2e8f0;
+        }
+
+        .info-title {
+            font-size: 14px;
+            font-weight: 700;
+            color: #0f172a;
+            letter-spacing: 0.02em;
+            text-transform: uppercase;
+        }
+
+        .info-steps {
+            display: grid;
+            gap: 8px;
+        }
+
+        .info-step {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            color: #475569;
+            font-size: 14px;
+            line-height: 1.5;
+        }
+
+        .info-badge {
+            width: 26px;
+            height: 26px;
+            border-radius: 999px;
+            display: grid;
+            place-items: center;
+            background: #e0e7ff;
+            color: #4338ca;
+            font-weight: 700;
+            font-size: 14px;
+        }
+
         .workflow {
             margin-top: 16px;
             display: flex;
@@ -348,6 +391,19 @@
                     Al elegir una materia serás redirigido a su grupo correspondiente. Revisa bien antes de confirmar, cada botón te
                     llevará a un enlace distinto.
                 </p>
+                <div class="info-panel" aria-label="Instrucciones rápidas">
+                    <p class="info-title">Cómo funciona</p>
+                    <div class="info-steps">
+                        <p class="info-step">
+                            <span class="info-badge">1</span>
+                            Selecciona la materia y toca el botón «Unirse al grupo».
+                        </p>
+                        <p class="info-step">
+                            <span class="info-badge">2</span>
+                            Confirma el acceso en la ventana emergente y listo.
+                        </p>
+                    </div>
+                </div>
             </header>
 
             <section class="workflow">
